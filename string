@@ -1,0 +1,52 @@
+using System;
+
+
+namespace ex1
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            string hoVatTen;
+
+            Console.WriteLine("Moi ban nhap ho va ten");
+            hoVatTen = Console.ReadLine();
+
+            PrintName(hoVatTen);
+            Console.WriteLine(" ho ten " + hoVatTen);
+
+            Console.ReadKey();
+        }
+
+
+        static void PrintName(string ten )
+        {
+            string result = "";
+
+            ten = ten.Trim();
+
+            while (ten.IndexOf("  ") != -1)
+            {
+                ten = ten.Replace("  ", " ");
+            }
+
+            string [] Name = ten.Split(' ');
+
+            for(int i=0; i < Name.Length;i++)
+            {
+                Name[i] = Name[i].Substring(0, 1).ToUpper() + Name[i].Substring(1).ToLower();
+                result += Name[i] + " ";
+            }
+
+            Console.WriteLine("Ho ten day du la " + result);
+
+
+        }
+
+    }
+}
+
+
+    
+
